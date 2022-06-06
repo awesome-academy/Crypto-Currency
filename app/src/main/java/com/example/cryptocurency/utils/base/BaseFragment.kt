@@ -33,6 +33,7 @@ abstract class BaseFragment<VB: ViewBinding>(val bindingFactory: (LayoutInflater
         _binding = null
     }
 
+
     abstract fun initView()
     abstract fun initData()
 }
