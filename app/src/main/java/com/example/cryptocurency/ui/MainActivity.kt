@@ -16,12 +16,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     }
 
     private fun setUpTabBar() {
-        binding?.apply{
+        binding?.apply {
             val count = tabLayout.tabCount
             TabLayoutAdapter(this@MainActivity, count).apply {
                 viewPager.adapter = this
             }
-            viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+            viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
                     tabLayout.selectTab(tabLayout.getTabAt(position))
