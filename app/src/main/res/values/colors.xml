@@ -16,4 +16,6 @@
     <color name="color_icons">#FFFFFF</color>
     <color name="color_divider">#BDBDBD</color>
     <color name="color_transparent">#00FFFFFF</color>
+    <color name="color_red">#FFF24C4C</color>
+    <color name="color_green">#FF00FFAB</color>
 </resources>

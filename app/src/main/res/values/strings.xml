@@ -1,6 +1,28 @@
 <resources>
     <string name="app_name">Crypto Currency</string>
     <string name="str_hello_world">Hello World!</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="exchange">Exchange</string>
+    <string name="home">Home</string>
+    <string name="top">Top:</string>
+    <string name="show">Show:</string>
+    <string name="change">Change</string>
+    <string name="price">Price</string>
+    <string name="name">Name</string>
+    <string name="rank">Rank</string>
+    <string name="rank1">#1</string>
+    <string-array name="coin_catalogs">
+        <item>Rank</item>
+        <item>Change</item>
+        <item>Market Cap</item>
+        <item>24h Volume</item>
+    </string-array>
+    <string-array name="coin_limits">
+        <item>10</item>
+        <item>20</item>
+        <item>50</item>
+        <item>100</item>
+        <item>200</item>
+    </string-array>
 </resources>
