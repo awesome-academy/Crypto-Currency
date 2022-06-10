@@ -38,7 +38,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
                 override fun onTabReselected(tab: TabLayout.Tab?) {
                 }
-
             })
         }
     }
