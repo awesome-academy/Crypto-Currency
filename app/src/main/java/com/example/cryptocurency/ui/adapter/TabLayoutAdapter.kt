@@ -20,10 +20,10 @@ class TabLayoutAdapter(
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            TAB_HOME -> HomeFragment()
-            TAB_FAVORITE -> FavoriteFragment()
-            TAB_ASSET -> AssetFragment()
-            else -> HomeFragment()
+            TAB_HOME -> HomeFragment.newInstance()
+            TAB_FAVORITE -> FavoriteFragment.newInstance()
+            TAB_ASSET -> AssetFragment.newInstance()
+            else -> HomeFragment.newInstance()
         }
     }
 }

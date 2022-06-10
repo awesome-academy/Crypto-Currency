@@ -54,5 +54,11 @@ class DatabaseHelper(context: Context?) :
         )
 
         private fun dropTable(name: String) = String.format("DROP TABLE IF EXISTS %s", name)
+
+        private var instance: DatabaseHelper? = null
+
+        fun getInstance(context: Context?) = synchronized(this) {
+            instance ?: DatabaseHelper(context).also { instance = it }
+        }
     }
 }

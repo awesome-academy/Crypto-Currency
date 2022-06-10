@@ -94,7 +94,8 @@
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="@dimen/dimen_80dp"
+            android:layout_width="@dimen/dimen_100dp"
+            android:layout_marginTop="@dimen/dimen_4dp"
             android:layout_height="wrap_content"
             android:text="@string/price"
             android:textColor="@color/color_white"
@@ -106,17 +107,19 @@
             android:layout_height="wrap_content"
             android:text="@string/change"
             android:textColor="@color/color_white"
+            android:layout_marginStart="@dimen/dimen_4dp"
             android:textSize="@dimen/dimen_14sp"
             android:textStyle="bold" />
     </TableRow>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_coin"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/dimen_10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dimen_8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_row" />
 
@@ -130,4 +133,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_row" />
+
+    <TextView
+        android:id="@+id/txt_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/something_went_wrong"
+        android:textColor="@color/color_red"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_row" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

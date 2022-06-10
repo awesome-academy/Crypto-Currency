@@ -12,17 +12,18 @@
     <string name="name">Name</string>
     <string name="rank">Rank</string>
     <string name="rank1">#1</string>
+    <string name="something_went_wrong">Something went wrong!</string>
     <string-array name="coin_catalogs">
-        <item>Rank</item>
-        <item>Change</item>
-        <item>Market Cap</item>
-        <item>24h Volume</item>
+        <item>marketCap</item>
+        <item>price</item>
+        <item>change</item>
+        <item>24hVolume</item>
     </string-array>
     <string-array name="coin_limits">
         <item>10</item>
         <item>20</item>
         <item>50</item>
+        <item>70</item>
         <item>100</item>
-        <item>200</item>
     </string-array>
 </resources>

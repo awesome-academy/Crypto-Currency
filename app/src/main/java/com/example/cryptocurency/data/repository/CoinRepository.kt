@@ -30,11 +30,11 @@ class CoinRepository(
     }
 
     override fun getRemoteCoinsByScope(
-        scopeLimit: Int,
-        scopeId: String,
+        limit: Int,
+        orderBy: String,
         listener: OnResultListener<MutableList<Coin>>
     ) {
-        remote.getAllRemoteCoins(listener)
+        remote.getRemoteCoinsByScope(limit, orderBy, listener)
     }
 
     override fun searchCoin(query: String, listener: OnResultListener<MutableList<Coin>>) {

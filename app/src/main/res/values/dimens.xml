@@ -16,4 +16,5 @@
     <dimen name="dimen_16sp">16sp</dimen>
     <dimen name="dimen_14sp">14sp</dimen>
     <dimen name="dimen_neg_2dp">-2dp</dimen>
+    <dimen name="dimen_100dp">100dp</dimen>
 </resources>
