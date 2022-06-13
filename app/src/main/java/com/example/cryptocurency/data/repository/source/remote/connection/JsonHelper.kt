@@ -58,9 +58,7 @@ object JsonHelper {
                         }
                     }
                     sparkline = list
-
                 }
-
             }
         }
     }

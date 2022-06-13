@@ -13,6 +13,16 @@
     <string name="rank">Rank</string>
     <string name="rank1">#1</string>
     <string name="something_went_wrong">Something went wrong!</string>
+    <string name="detail">Detail</string>
+    <string name="btc">BTC</string>
+    <string name="description">Description</string>
+    <string name="markets_cap">Markets Cap:</string>
+    <string name="loading">Loading</string>
+    <string name="website_url">Website URL:</string>
+    <string name="btc_price">BTC Price:</string>
+    <string name="num_market">Number of Markets:</string>
+    <string name="num_exchange">Number of Exchange:</string>
+    <string name="_24h_volume">24h Volume:</string>
     <string-array name="coin_catalogs">
         <item>marketCap</item>
         <item>price</item>

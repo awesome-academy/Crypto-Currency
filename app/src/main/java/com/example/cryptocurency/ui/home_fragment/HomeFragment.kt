@@ -9,7 +9,7 @@ import android.widget.TextView
 import com.example.cryptocurency.R
 import com.example.cryptocurency.data.models.Coin
 import com.example.cryptocurency.databinding.FragmentHomeBinding
-import com.example.cryptocurency.ui.DetailActivity
+import com.example.cryptocurency.ui.detail.DetailActivity
 import com.example.cryptocurency.ui.ExchangeActivity
 import com.example.cryptocurency.ui.adapter.ItemClickListener
 import com.example.cryptocurency.ui.adapter.MainCoinAdapter

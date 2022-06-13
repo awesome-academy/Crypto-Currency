@@ -17,7 +17,6 @@ data class Coin(
     var chance: String = "0",
     var rank: Int= 0,
     var n24hVolume: String = "0",
-    var isFavorite: Boolean = false,
     var coinDetail : CoinDetail = CoinDetail()
 ): Parcelable
 
