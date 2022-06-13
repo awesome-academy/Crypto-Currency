@@ -5,7 +5,7 @@ import com.example.cryptocurency.data.models.Coin
 import com.example.cryptocurency.data.models.CoinEntry
 import com.example.cryptocurency.data.repository.source.local.database.DatabaseHelper
 
-class FavoriteCoinsDAO(DBHelper: DatabaseHelper) : IFavoriteCoinsDAO {
+class FavoriteCoinsDAOImpl(DBHelper: DatabaseHelper) : IFavoriteCoinsDAO {
 
     private val writeDB = DBHelper.writableDatabase
     private val readDB = DBHelper.readableDatabase
@@ -87,5 +87,13 @@ class FavoriteCoinsDAO(DBHelper: DatabaseHelper) : IFavoriteCoinsDAO {
         put(CoinEntry.BTC_PRICE, coin.btcPrice)
         put(CoinEntry.COLOR, coin.color)
         put(CoinEntry.RANK, coin.rank)
+    }
+
+    companion object {
+        private var instance: FavoriteCoinsDAOImpl? = null
+
+        fun getInstance(db: DatabaseHelper) = synchronized(this) {
+            instance ?: FavoriteCoinsDAOImpl(db).also { instance = it }
+        }
     }
 }

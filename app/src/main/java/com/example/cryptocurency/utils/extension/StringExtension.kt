@@ -6,3 +6,5 @@ fun String.getCoinChange() = toDoubleOrNull()?.let {
     if (it < 0) "${this}%"
     else "+${this}%"
 } ?: this
+
+fun String.getCoinRank() = "#${this}"

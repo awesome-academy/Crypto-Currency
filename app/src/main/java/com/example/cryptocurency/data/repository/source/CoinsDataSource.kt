@@ -13,8 +13,8 @@ interface CoinsDataSource {
     interface Remote {
         fun getAllRemoteCoins(listener: OnResultListener<MutableList<Coin>>)
         fun getRemoteCoinsByScope(
-            scopeLimit: Int,
-            scopeId: String,
+            limit: Int,
+            orderBy: String,
             listener: OnResultListener<MutableList<Coin>>
         )
 

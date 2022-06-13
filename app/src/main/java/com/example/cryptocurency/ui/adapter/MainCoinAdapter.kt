@@ -7,10 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cryptocurency.R
 import com.example.cryptocurency.data.models.Coin
 import com.example.cryptocurency.databinding.ItemCoinMainLayoutBinding
-import com.example.cryptocurency.utils.extension.getCoinChange
-import com.example.cryptocurency.utils.extension.getCoinPrice
-import com.example.cryptocurency.utils.extension.loadImageWithUrl
-import com.example.cryptocurency.utils.extension.setTextColorFromResource
+import com.example.cryptocurency.utils.extension.*
 
 class MainCoinAdapter(private val mListener: ItemClickListener<Coin>) :
     RecyclerView.Adapter<MainCoinAdapter.ViewHolder>() {
@@ -29,11 +26,15 @@ class MainCoinAdapter(private val mListener: ItemClickListener<Coin>) :
             with(mList[position]) {
                 coinItem = this
                 with(binding) {
+                    txtRank.text = rank.toString().getCoinRank()
                     txtName.text = name
                     txtSymbol.text = symbol
                     txtChange.text = chance.getCoinChange()
-                    txtPrice.text = price.getCoinPrice()
-                    icCoin.loadImageWithUrl(iconUrl, R.drawable.img_default_coin)
+                    txtPrice.apply {
+                        text = price.getCoinPrice()
+                        isSelected = true
+                    }
+                    icCoin.loadImageSVG(iconUrl, R.drawable.img_default_coin)
                     chance.toDoubleOrNull()?.let {
                         if (it < 0) {
                             txtChange.setTextColorFromResource(R.color.color_red)
@@ -49,7 +50,11 @@ class MainCoinAdapter(private val mListener: ItemClickListener<Coin>) :
     override fun getItemCount(): Int = mList.size
 
     fun setAdapterData(list: MutableList<Coin>) {
-        mList = list
+        mList.apply {
+            clear()
+            addAll(list)
+            notifyDataSetChanged()
+        }
     }
 
     inner class ViewHolder(

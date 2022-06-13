@@ -13,11 +13,11 @@ class CoinsRemoteDataSource : CoinsDataSource.Remote {
     }
 
     override fun getRemoteCoinsByScope(
-        scopeLimit: Int,
-        scopeId: String,
+        limit: Int,
+        orderBy: String,
         listener: OnResultListener<MutableList<Coin>>
     ) {
-        HttpConnection.callApiCoins(ApiManager.getCoinsWithScopeUrl(scopeLimit, scopeId), listener)
+        HttpConnection.callApiCoins(ApiManager.getCoinsWithScopeUrl(limit, orderBy), listener)
     }
 
     override fun searchCoin(query: String, listener: OnResultListener<MutableList<Coin>>) {

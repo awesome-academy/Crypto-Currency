@@ -7,16 +7,15 @@ object ApiManager {
     private const val SEARCH_PATH = "/search-suggestions"
     private const val PARAM_REQUEST = "?"
     private const val PARAM_SEPARATOR = "&"
-    private const val SCOPE_ID_PARAM = "scopeId="
-    private const val SCOPE_LIMIT_PARAM = "scopeLimit="
+    private const val ORDER_BY_PARAM = "orderBy="
     private const val SEARCH_PARAM = "search="
     private const val LIMIT_PARAM = "limit="
 
     fun getCoinsUrl(): String =
         BASE_URL + COINS_PATH
 
-    fun getCoinsWithScopeUrl(limit: Int, id: String): String =
-        BASE_URL + COINS_PATH + PARAM_REQUEST + SCOPE_LIMIT_PARAM + limit.toString() + PARAM_SEPARATOR + SCOPE_ID_PARAM + id
+    fun getCoinsWithScopeUrl(limit: Int, orderBy: String): String =
+        BASE_URL + COINS_PATH + PARAM_REQUEST + LIMIT_PARAM + limit.toString() + PARAM_SEPARATOR + ORDER_BY_PARAM + orderBy
 
     fun getCoinDetailUrl(id: String): String =
         BASE_URL + DETAIL_COIN_PATH + id

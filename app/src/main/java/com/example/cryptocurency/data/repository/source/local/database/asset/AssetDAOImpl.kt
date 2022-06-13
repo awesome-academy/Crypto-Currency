@@ -5,7 +5,7 @@ import com.example.cryptocurency.data.models.Asset
 import com.example.cryptocurency.data.models.AssetEntry
 import com.example.cryptocurency.data.repository.source.local.database.DatabaseHelper
 
-class AssetDAO(DBHelper: DatabaseHelper) : IAssetDAO {
+class AssetDAOImpl(DBHelper: DatabaseHelper) : IAssetDAO {
 
     private val writeDB = DBHelper.writableDatabase
     private val readDB = DBHelper.readableDatabase
@@ -64,5 +64,13 @@ class AssetDAO(DBHelper: DatabaseHelper) : IAssetDAO {
         put(AssetEntry.COUNT, asset.count)
         put(AssetEntry.PURCHASE_PRICE, asset.purchasePrice)
         put(AssetEntry.PURCHASE_TIME, asset.purchaseTime)
+    }
+
+    companion object {
+        private var instance: AssetDAOImpl? = null
+
+        fun getInstance(db: DatabaseHelper) = synchronized(this) {
+            instance ?: AssetDAOImpl(db).also { instance = it }
+        }
     }
 }
