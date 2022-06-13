@@ -6,6 +6,9 @@ import com.example.cryptocurency.data.repository.source.local.CoinsLocalDataSour
 import com.example.cryptocurency.data.repository.source.local.database.DatabaseHelper
 import com.example.cryptocurency.data.repository.source.local.database.favorite.FavoriteCoinsDAOImpl
 import com.example.cryptocurency.data.repository.source.remote.CoinsRemoteDataSource
+import com.example.cryptocurency.ui.detail.DetailActivity
+import com.example.cryptocurency.ui.detail.DetailActivityContract
+import com.example.cryptocurency.ui.detail.DetailActivityPresenter
 import com.example.cryptocurency.ui.home_fragment.HomeFragmentContract
 import com.example.cryptocurency.ui.home_fragment.HomeFragmentPresenter
 
@@ -20,6 +23,11 @@ class PresenterFactory(context: Context?) {
     )
 
     fun createHomeFragmentPresenter(view: HomeFragmentContract.View) = HomeFragmentPresenter(
+        view,
+        coinRepository
+    )
+
+    fun createDetailActivityPresenter(view: DetailActivityContract.View) = DetailActivityPresenter(
         view,
         coinRepository
     )

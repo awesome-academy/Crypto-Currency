@@ -18,4 +18,5 @@
     <color name="color_transparent">#00FFFFFF</color>
     <color name="color_red">#FFF24C4C</color>
     <color name="color_green">#FF00FFAB</color>
+    <color name="color_black_3">#ff333333</color>
 </resources>

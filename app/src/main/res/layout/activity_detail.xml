@@ -4,6 +4,374 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DetailActivity">
+    tools:context=".ui.detail.DetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_white"
+        android:elevation="@dimen/dimen_8dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tool_bar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/detail"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/dimen_20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:backgroundTint="@color/color_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <ImageButton
+                android:id="@+id/btn_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/color_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_favorite_border" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dimen_4dp"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            tools:layout_editor_absoluteX="8dp">
+
+            <TextView
+                android:id="@+id/txt_coin_rank"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@string/rank1"
+                android:textColor="@color/color_black_3"
+                android:textSize="@dimen/dimen_16sp"
+                app:layout_constraintEnd_toStartOf="@+id/txt_coin_price"
+                app:layout_constraintStart_toEndOf="@id/img_coin"
+                app:layout_constraintTop_toBottomOf="@id/txt_coin_symbol" />
+
+            <TextView
+                android:id="@+id/txt_coin_symbol"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:text="@string/btc"
+                android:textColor="@color/color_black_3"
+                android:textSize="@dimen/dimen_20sp"
+                app:layout_constraintEnd_toStartOf="@+id/txt_coin_price"
+                app:layout_constraintStart_toEndOf="@id/img_coin"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_coin"
+                android:layout_width="@dimen/dimen_100dp"
+                android:layout_height="@dimen/dimen_100dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/img_default_coin" />
+
+            <TextView
+                android:id="@+id/txt_coin_price"
+                android:layout_width="@dimen/dimen_80dp"
+                android:layout_height="@dimen/dimen_20dp"
+                android:layout_marginStart="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_40dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/rank1"
+                android:textAlignment="center"
+                android:textColor="@color/color_black_3"
+                android:textSize="@dimen/dimen_14sp"
+                app:layout_constraintEnd_toStartOf="@id/txt_coin_change"
+                app:layout_constraintStart_toEndOf="@+id/txt_coin_rank"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_coin_change"
+                android:layout_width="@dimen/dimen_60dp"
+                android:layout_height="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_40dp"
+                android:background="@drawable/background_increase"
+                android:text="@string/rank1"
+                android:textAlignment="center"
+                android:textColor="@color/color_black_3"
+                android:textSize="@dimen/dimen_14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/view_chart"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_200dp"
+                android:layout_marginVertical="@dimen/dimen_20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_coin" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/view_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_8dp"
+                android:layout_marginVertical="@dimen/dimen_20dp"
+                app:cardElevation="@dimen/dimen_8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_chart">
+
+                <TextView
+                    android:id="@+id/txt_coin_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimen_30dp"
+                    android:layout_marginVertical="@dimen/dimen_30dp"
+                    android:lineSpacingExtra="@dimen/dimen_4dp"
+                    android:text="@string/description" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_description">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_height="@dimen/dimen_100dp"
+                        android:layout_marginHorizontal="@dimen/dimen_8dp"
+                        android:layout_marginVertical="@dimen/dimen_20dp"
+                        android:layout_weight="1"
+                        app:cardElevation="@dimen/dimen_8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/dimen_10dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dimen_10dp"
+                                android:text="@string/markets_cap"
+                                android:textSize="@dimen/dimen_16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_coin_market_cap"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/loading" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_height="@dimen/dimen_100dp"
+                        android:layout_marginHorizontal="@dimen/dimen_8dp"
+                        android:layout_marginVertical="@dimen/dimen_20dp"
+                        android:layout_weight="1"
+                        app:cardElevation="@dimen/dimen_8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/dimen_10dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dimen_10dp"
+                                android:text="@string/_24h_volume"
+                                android:textSize="@dimen/dimen_16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_coin_24h_volume"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/loading" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_height="@dimen/dimen_100dp"
+                        android:layout_marginHorizontal="@dimen/dimen_8dp"
+                        android:layout_marginVertical="@dimen/dimen_20dp"
+                        android:layout_weight="1"
+                        app:cardElevation="@dimen/dimen_8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/dimen_10dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dimen_10dp"
+                                android:text="@string/num_market"
+                                android:textSize="@dimen/dimen_16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_coin_num_market"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/loading" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_height="@dimen/dimen_100dp"
+                        android:layout_marginHorizontal="@dimen/dimen_8dp"
+                        android:layout_marginVertical="@dimen/dimen_20dp"
+                        android:layout_weight="1"
+                        app:cardElevation="@dimen/dimen_8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/dimen_10dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dimen_10dp"
+                                android:text="@string/num_exchange"
+                                android:textSize="@dimen/dimen_16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_coin_num_exchange"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/loading" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_height="@dimen/dimen_100dp"
+                        android:layout_marginHorizontal="@dimen/dimen_8dp"
+                        android:layout_marginVertical="@dimen/dimen_20dp"
+                        android:layout_weight="1"
+                        app:cardElevation="@dimen/dimen_8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/dimen_10dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dimen_10dp"
+                                android:text="@string/btc_price"
+                                android:textSize="@dimen/dimen_16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_coin_btc_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/loading" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_height="@dimen/dimen_100dp"
+                        android:layout_marginHorizontal="@dimen/dimen_8dp"
+                        android:layout_marginVertical="@dimen/dimen_20dp"
+                        android:layout_weight="1"
+                        app:cardElevation="@dimen/dimen_8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/dimen_10dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dimen_10dp"
+                                android:text="@string/website_url"
+                                android:textSize="@dimen/dimen_16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_coin_website_url"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/loading" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </TableRow>
+            </TableLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
