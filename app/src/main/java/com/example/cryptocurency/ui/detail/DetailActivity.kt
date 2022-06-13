@@ -18,7 +18,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
 
     override fun initView() {
         binding?.apply {
-            setSupportActionBar(toolBar)
+            setSupportActionBar(toolbar)
             btnBack.setOnClickListener {
                 this@DetailActivity.finish()
             }
@@ -79,8 +79,8 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
                 imgCoin.loadImageSVG(iconUrl, R.drawable.img_default_coin)
                 txtCoinPrice.text = price.getCoinPrice()
                 txtCoinChange.apply {
-                    text = chance.getCoinChange()
-                    chance.toDoubleOrNull()?.let {
+                    text = change.getCoinChange()
+                    change.toDoubleOrNull()?.let {
                         setBackgroundResource(
                             if (it >= 0) R.drawable.background_increase else R.drawable.background_decrease
                         )

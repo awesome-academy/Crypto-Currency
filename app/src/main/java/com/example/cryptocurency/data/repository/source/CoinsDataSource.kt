@@ -7,6 +7,7 @@ interface CoinsDataSource {
         fun getLocalCoins(listener: OnResultListener<MutableList<Coin>>)
         fun insertCoin(coin: Coin, listener: OnResultListener<Unit>)
         fun deleteCoin(coinId: String, listener: OnResultListener<Unit>)
+        fun updateLocalFavoriteCoins(coins: MutableList<Coin>, listener: OnResultListener<Unit>)
         fun isFavorite(coinId: String, listener: OnResultListener<Boolean>)
     }
 
@@ -17,14 +18,13 @@ interface CoinsDataSource {
             orderBy: String,
             listener: OnResultListener<MutableList<Coin>>
         )
-
         fun searchCoin(query: String, listener: OnResultListener<MutableList<Coin>>)
         fun searchCoinWithLimit(
             query: String,
             limit: Int,
             listener: OnResultListener<MutableList<Coin>>
         )
-
         fun getCoinDetail(coinId: String, listener: OnResultListener<Coin>)
+        fun updateListCoins(list:MutableList<String>, listener: OnResultListener<MutableList<Coin>>)
     }
 }

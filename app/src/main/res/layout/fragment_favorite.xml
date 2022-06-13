@@ -1,13 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.favorite_fragment.FavoriteFragment">
+    android:layout_marginBottom="@dimen/dimen_48dp"
+    tools:context=".ui.home_fragment.HomeFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/favorite" />
+
+    <Spinner
+        android:id="@+id/sortSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_48dp"
+        android:layout_marginStart="@dimen/dimen_4dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:backgroundTint="@color/color_white"
+        android:minWidth="@dimen/dimen_60dp"
+        app:layout_constraintStart_toEndOf="@id/txtSort"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/txtSort"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_48dp"
+        android:layout_marginStart="@dimen/dimen_8dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:gravity="center"
+        android:text="@string/sort"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/dimen_16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
-</FrameLayout>
+    <TableRow
+        android:id="@+id/labelRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_70dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <TextView
+            android:layout_width="@dimen/dimen_50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_4dp"
+            android:text="@string/rank"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/dimen_14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_weight="1"
+            android:text="@string/name"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/dimen_14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="@dimen/dimen_100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/price"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/dimen_14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="@dimen/dimen_80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_4dp"
+            android:text="@string/change"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/dimen_14sp"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewCoin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelRow" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelRow" />
+
+    <TextView
+        android:id="@+id/txtError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/something_went_wrong"
+        android:textColor="@color/color_red"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelRow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

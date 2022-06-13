@@ -10,9 +10,19 @@ object ApiManager {
     private const val ORDER_BY_PARAM = "orderBy="
     private const val SEARCH_PARAM = "search="
     private const val LIMIT_PARAM = "limit="
+    private const val IDS_PARAM = "uuids[]="
 
     fun getCoinsUrl(): String =
         BASE_URL + COINS_PATH
+
+    fun getCoinsByIdUrl(coinsId: MutableList<String>): String {
+        var result = BASE_URL + COINS_PATH + PARAM_REQUEST
+        for (i in 0 until coinsId.size){
+            result += IDS_PARAM + coinsId[i]+ PARAM_SEPARATOR
+        }
+        result +=IDS_PARAM + coinsId.last()
+        return result
+    }
 
     fun getCoinsWithScopeUrl(limit: Int, orderBy: String): String =
         BASE_URL + COINS_PATH + PARAM_REQUEST + LIMIT_PARAM + limit.toString() + PARAM_SEPARATOR + ORDER_BY_PARAM + orderBy
