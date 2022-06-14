@@ -21,7 +21,7 @@ class CoinsRemoteDataSource : CoinsDataSource.Remote {
     }
 
     override fun searchCoin(query: String, listener: OnResultListener<MutableList<Coin>>) {
-        HttpConnection.callApiCoins(ApiManager.getSearchUrl(query),listener)
+        HttpConnection.callApiCoins(ApiManager.getSearchUrl(query), listener)
     }
 
     override fun searchCoinWithLimit(
@@ -29,13 +29,16 @@ class CoinsRemoteDataSource : CoinsDataSource.Remote {
         limit: Int,
         listener: OnResultListener<MutableList<Coin>>
     ) {
-        HttpConnection.callApiCoins(ApiManager.getSearchWithLimitUrl(query,limit),listener)
+        HttpConnection.callApiCoins(ApiManager.getSearchWithLimitUrl(query, limit), listener)
     }
 
     override fun getCoinDetail(coinId: String, listener: OnResultListener<Coin>) {
-        HttpConnection.callApiDetailCoin(ApiManager.getCoinDetailUrl(coinId),listener)
+        HttpConnection.callApiDetailCoin(ApiManager.getCoinDetailUrl(coinId), listener)
     }
 
+    override fun updateListCoins(list:MutableList<String>, listener: OnResultListener<MutableList<Coin>>) {
+        HttpConnection.callApiCoins(ApiManager.getCoinsByIdUrl(list),listener)
+    }
 
     companion object {
         private var instance: CoinsRemoteDataSource? = null

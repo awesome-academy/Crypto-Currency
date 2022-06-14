@@ -11,7 +11,7 @@
         android:background="@color/color_transparent"
         android:gravity="center_vertical">
         <TextView
-            android:id="@+id/txt_rank"
+            android:id="@+id/txtRank"
             android:layout_width="@dimen/dimen_50dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimen_4dp"
@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
             <ImageView
-                android:id="@+id/ic_coin"
+                android:id="@+id/icCoin"
                 android:layout_width="@dimen/dimen_30dp"
                 android:layout_height="@dimen/dimen_30dp"
                 android:scaleType="fitXY"
@@ -32,7 +32,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
             <TextView
-                android:id="@+id/txt_name"
+                android:id="@+id/txtName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_10dp"
@@ -40,21 +40,21 @@
                 android:text="@string/name"
                 android:textStyle="bold"
                 android:textColor="@color/color_white"
-                app:layout_constraintStart_toEndOf="@+id/ic_coin"
+                app:layout_constraintStart_toEndOf="@id/icCoin"
                 app:layout_constraintTop_toTopOf="parent" />
             <TextView
-                android:id="@+id/txt_symbol"
+                android:id="@+id/txtSymbol"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_10dp"
                 android:layout_marginTop="@dimen/dimen_4dp"
                 android:text="@string/name"
                 android:textColor="@color/color_white"
-                app:layout_constraintStart_toEndOf="@+id/ic_coin"
-                app:layout_constraintTop_toBottomOf="@+id/txt_name" />
+                app:layout_constraintStart_toEndOf="@id/icCoin"
+                app:layout_constraintTop_toBottomOf="@id/txtName" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <TextView
-            android:id="@+id/txt_price"
+            android:id="@+id/txtPrice"
             android:layout_width="@dimen/dimen_100dp"
             android:layout_height="wrap_content"
             android:text="@string/price"
@@ -66,7 +66,7 @@
             android:focusableInTouchMode="true"
             android:textStyle="bold" />
         <TextView
-            android:id="@+id/txt_change"
+            android:id="@+id/txtChange"
             android:layout_width="@dimen/dimen_80dp"
             android:layout_height="wrap_content"
             android:ellipsize="marquee"

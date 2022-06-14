@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cryptocurency.R
 import com.example.cryptocurency.data.models.Coin
+import com.example.cryptocurency.data.models.CoinEntry
 import com.example.cryptocurency.databinding.ItemCoinMainLayoutBinding
 import com.example.cryptocurency.utils.extension.*
 
@@ -29,13 +30,13 @@ class MainCoinAdapter(private val mListener: ItemClickListener<Coin>) :
                     txtRank.text = rank.toString().getCoinRank()
                     txtName.text = name
                     txtSymbol.text = symbol
-                    txtChange.text = chance.getCoinChange()
+                    txtChange.text = change.getCoinChange()
                     txtPrice.apply {
                         text = price.getCoinPrice()
                         isSelected = true
                     }
                     icCoin.loadImageSVG(iconUrl, R.drawable.img_default_coin)
-                    chance.toDoubleOrNull()?.let {
+                    change.toDoubleOrNull()?.let {
                         if (it < 0) {
                             txtChange.setTextColorFromResource(R.color.color_red)
                         } else {
@@ -54,6 +55,50 @@ class MainCoinAdapter(private val mListener: ItemClickListener<Coin>) :
             clear()
             addAll(list)
             notifyDataSetChanged()
+        }
+    }
+
+    fun sortAdapterData(sort: String) {
+        when (sort) {
+            CoinEntry.MARKET_CAP -> {
+                mList.sortByDescending {
+                    it.marketCap.toLong()
+                }
+            }
+            CoinEntry.CHANGE -> {
+                mList.sortByDescending {
+                    it.change.toDouble()
+                }
+            }
+            CoinEntry.N_24H_VOLUME -> {
+                mList.sortByDescending {
+                    it.n24hVolume.toLong()
+                }
+            }
+            CoinEntry.PRICE -> {
+                mList.sortByDescending {
+                    it.price.toDouble()
+                }
+            }
+        }
+        notifyDataSetChanged()
+    }
+
+    fun updateAdapterData(list: MutableList<Coin>) {
+        for (i in 0 until mList.size) {
+            list.firstOrNull { it.id == mList[i].id }?.apply {
+                mList[i] = this
+                notifyItemChanged(i)
+            }
+        }
+    }
+
+    fun deleteAdapterData(coin: Coin) {
+        mList.indexOfFirst { it.id == coin.id }.apply {
+            if (this != -1) {
+                mList.removeAt(this)
+                notifyItemRemoved(this)
+            }
         }
     }
 

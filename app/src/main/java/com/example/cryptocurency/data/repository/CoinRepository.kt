@@ -21,6 +21,13 @@ class CoinRepository(
         local.deleteCoin(coinId, listener)
     }
 
+    override fun updateLocalFavoriteCoins(
+        coins: MutableList<Coin>,
+        listener: OnResultListener<Unit>
+    ) {
+        local.updateLocalFavoriteCoins(coins, listener)
+    }
+
     override fun isFavorite(coinId: String, listener: OnResultListener<Boolean>) {
         local.isFavorite(coinId, listener)
     }
@@ -51,6 +58,13 @@ class CoinRepository(
 
     override fun getCoinDetail(coinId: String, listener: OnResultListener<Coin>) {
         remote.getCoinDetail(coinId, listener)
+    }
+
+    override fun updateListCoins(
+        list: MutableList<String>,
+        listener: OnResultListener<MutableList<Coin>>
+    ) {
+        remote.updateListCoins(list, listener)
     }
 
     companion object {

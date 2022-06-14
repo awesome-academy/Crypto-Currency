@@ -44,6 +44,22 @@ class CoinsLocalDataSource(private val dao: IFavoriteCoinsDAO) : CoinsDataSource
         }
     }
 
+    override fun updateLocalFavoriteCoins(
+        coins: MutableList<Coin>,
+        listener: OnResultListener<Unit>
+    ) {
+        Executors.newSingleThreadExecutor().execute {
+            try {
+                for (i in 0 until coins.size){
+                    dao.updateCoin(coins[i])
+                }
+                Handler(Looper.getMainLooper()).post { listener.onSuccess(Unit) }
+            } catch (e: Exception) {
+                Handler(Looper.getMainLooper()).post { listener.onError(e) }
+            }
+        }
+    }
+
     override fun isFavorite(coinId: String, listener: OnResultListener<Boolean>) {
         Executors.newSingleThreadExecutor().execute {
             try {

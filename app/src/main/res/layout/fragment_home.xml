@@ -8,7 +8,7 @@
     tools:context=".ui.home_fragment.HomeFragment">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tool_bar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/color_transparent"
@@ -18,18 +18,18 @@
         app:title="@string/home" />
 
     <Spinner
-        android:id="@+id/top_spinner"
+        android:id="@+id/topSpinner"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dimen_48dp"
         android:layout_marginStart="@dimen/dimen_4dp"
         android:layout_marginTop="@dimen/dimen_10dp"
         android:backgroundTint="@color/color_white"
         android:minWidth="@dimen/dimen_60dp"
-        app:layout_constraintStart_toEndOf="@id/txt_top"
-        app:layout_constraintTop_toBottomOf="@id/tool_bar" />
+        app:layout_constraintStart_toEndOf="@id/txtTop"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <TextView
-        android:id="@+id/txt_top"
+        android:id="@+id/txtTop"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dimen_48dp"
         android:layout_marginStart="@dimen/dimen_8dp"
@@ -40,10 +40,10 @@
         android:textSize="@dimen/dimen_16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tool_bar" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <Spinner
-        android:id="@+id/show_spinner"
+        android:id="@+id/showSpinner"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dimen_48dp"
         android:layout_marginTop="@dimen/dimen_10dp"
@@ -51,10 +51,10 @@
         android:backgroundTint="@color/color_white"
         android:minWidth="@dimen/dimen_60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tool_bar" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <TextView
-        android:id="@+id/txt_show"
+        android:id="@+id/txtShow"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dimen_48dp"
         android:layout_marginTop="@dimen/dimen_10dp"
@@ -64,18 +64,18 @@
         android:textColor="@color/color_white"
         android:textSize="@dimen/dimen_16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/show_spinner"
-        app:layout_constraintTop_toBottomOf="@id/tool_bar" />
+        app:layout_constraintEnd_toStartOf="@id/showSpinner"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <TableRow
-        android:id="@+id/label_row"
+        android:id="@+id/labelRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_70dp"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tool_bar">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <TextView
             android:layout_width="@dimen/dimen_50dp"
@@ -95,7 +95,6 @@
 
         <TextView
             android:layout_width="@dimen/dimen_100dp"
-            android:layout_marginTop="@dimen/dimen_4dp"
             android:layout_height="wrap_content"
             android:text="@string/price"
             android:textColor="@color/color_white"
@@ -113,7 +112,7 @@
     </TableRow>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_coin"
+        android:id="@+id/recyclerviewCoin"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -121,10 +120,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/dimen_8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_row" />
+        app:layout_constraintTop_toBottomOf="@id/labelRow" />
 
     <ProgressBar
-        android:id="@+id/progress_bar"
+        android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:visibility="gone"
         android:layout_width="wrap_content"
@@ -132,10 +131,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_row" />
+        app:layout_constraintTop_toBottomOf="@id/labelRow" />
 
     <TextView
-        android:id="@+id/txt_error"
+        android:id="@+id/txtError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/something_went_wrong"
@@ -145,6 +144,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_row" />
+        app:layout_constraintTop_toBottomOf="@id/labelRow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

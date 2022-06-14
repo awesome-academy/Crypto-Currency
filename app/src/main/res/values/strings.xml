@@ -23,6 +23,8 @@
     <string name="num_market">Number of Markets:</string>
     <string name="num_exchange">Number of Exchange:</string>
     <string name="_24h_volume">24h Volume:</string>
+    <string name="favorite">Favorite</string>
+    <string name="sort">Sort:</string>
     <string-array name="coin_catalogs">
         <item>marketCap</item>
         <item>price</item>

@@ -19,6 +19,7 @@ import com.example.cryptocurency.utils.factory.PresenterFactory
 import com.example.cryptocurency.utils.base.BaseFragment
 import com.example.cryptocurency.utils.extension.setTextColorFromResource
 import com.example.cryptocurency.utils.extension.showToast
+import com.example.cryptocurency.utils.factory.SpinnerFactory
 import java.lang.Exception
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate),
@@ -32,7 +33,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun initView() {
         context?.let { context ->
             binding?.apply {
-                toolBar.apply {
+                toolbar.apply {
                     inflateMenu(R.menu.menu_toolbar_home)
                     setOnMenuItemClickListener {
                         handleToolBarItemClick(it.itemId)
@@ -40,13 +41,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                     }
                 }
                 topSpinner.apply {
-                    adapter = ArrayAdapter.createFromResource(
-                        context,
-                        R.array.coin_catalogs,
-                        androidx.appcompat.R.layout.support_simple_spinner_dropdown_item
-                    )
-                    onItemSelectedListener = createSpinnerListener(
-                        context,
+                    adapter = SpinnerFactory.createSpinnerAdapter(context, R.array.coin_catalogs)
+                    onItemSelectedListener = SpinnerFactory.createSpinnerListener(
                         {
                             currentSort = resources.getStringArray(R.array.coin_catalogs)[it]
                             handleGetCoin()
@@ -55,13 +51,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                     )
                 }
                 showSpinner.apply {
-                    adapter = ArrayAdapter.createFromResource(
-                        context,
-                        R.array.coin_limits,
-                        androidx.appcompat.R.layout.support_simple_spinner_dropdown_item
-                    )
-                    onItemSelectedListener = createSpinnerListener(
-                        context,
+                    adapter = SpinnerFactory.createSpinnerAdapter(context, R.array.coin_limits)
+                    onItemSelectedListener = SpinnerFactory.createSpinnerListener(
                         {
                             currentLimit =
                                 resources.getStringArray(R.array.coin_limits)[it].toIntOrNull()
@@ -85,7 +76,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         updateCoinsData(coins)
         binding?.apply {
             recyclerviewCoin.visibility = View.VISIBLE
-            if(coins.isEmpty()){
+            if (coins.isEmpty()) {
                 context?.showToast(EXCEPTION_NO_DATA)
             }
         }
@@ -93,7 +84,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     override fun getCoinFailed(exception: Exception?) {
         binding?.apply {
-            txtError.apply{
+            txtError.apply {
                 visibility = View.VISIBLE
                 text = exception?.message
             }
@@ -115,27 +106,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             progressBar.visibility = View.GONE
             showSpinner.isEnabled = true
             topSpinner.isEnabled = true
-        }
-    }
-
-    private fun createSpinnerListener(
-        context: Context,
-        handleSelect: (Int) -> Unit,
-        handleNoSelect: () -> Unit
-    ) = object :
-        AdapterView.OnItemSelectedListener {
-        override fun onItemSelected(
-            parent: AdapterView<*>,
-            view: View,
-            position: Int,
-            id: Long
-        ) {
-            (view as TextView).setTextColorFromResource(R.color.color_white)
-            handleSelect(position)
-        }
-
-        override fun onNothingSelected(parent: AdapterView<*>) {
-            handleNoSelect()
         }
     }
 

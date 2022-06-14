@@ -5,29 +5,25 @@ import com.example.cryptocurency.data.models.CoinEntry
 import org.json.JSONObject
 
 object JsonHelper {
-    fun getCoinsDataFromJson(responseString: String): MutableList<Coin>? {
-        val jsonObject = JSONObject(responseString)
+    fun getCoinsDataFromJson(responseString: String): MutableList<Coin>? = try {
         val listResult = mutableListOf<Coin>()
-        return try {
-            val jsonCoins = jsonObject.getJSONObject(CoinEntry.DATA).getJSONArray(CoinEntry.COINS)
-            for (i in 0 until jsonCoins.length()) {
-                listResult.add(parseJsonToCoin(jsonCoins.optJSONObject(i), false))
-            }
-            listResult
-        } catch (e: Exception) {
-            e.printStackTrace()
-            null
+        val jsonObject = JSONObject(responseString)
+        val jsonCoins = jsonObject.getJSONObject(CoinEntry.DATA).getJSONArray(CoinEntry.COINS)
+        for (i in 0 until jsonCoins.length()) {
+            listResult.add(parseJsonToCoin(jsonCoins.optJSONObject(i), false))
         }
+        listResult
+    } catch (e: Exception) {
+        e.printStackTrace()
+        null
     }
 
-    fun getCoinDetailFromJson(responseString: String): Coin? {
+    fun getCoinDetailFromJson(responseString: String): Coin? = try {
         val jsonObject = JSONObject(responseString)
-        return try {
-            val jsonCoin = jsonObject.getJSONObject(CoinEntry.DATA).getJSONObject(CoinEntry.COIN)
-            parseJsonToCoin(jsonCoin, true)
-        } catch (e: Exception) {
-            null
-        }
+        val jsonCoin = jsonObject.getJSONObject(CoinEntry.DATA).getJSONObject(CoinEntry.COIN)
+        parseJsonToCoin(jsonCoin, true)
+    } catch (e: Exception) {
+        null
     }
 
     private fun parseJsonToCoin(json: JSONObject, detail: Boolean) = Coin().apply {
@@ -41,7 +37,7 @@ object JsonHelper {
             rank = it.optInt(CoinEntry.RANK)
             btcPrice = it.optString(CoinEntry.BTC_PRICE)
             color = it.optString(CoinEntry.COLOR)
-            chance = it.optString(CoinEntry.CHANCE)
+            change = it.optString(CoinEntry.CHANGE)
             n24hVolume = it.optString(CoinEntry.N_24H_VOLUME)
             if (detail) {
                 coinDetail.apply {

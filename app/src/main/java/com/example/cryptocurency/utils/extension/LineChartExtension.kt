@@ -16,6 +16,7 @@ fun LineChart.createCoinChart(sparkline: ArrayList<String>, coinColor: String){
     val lineData = LineData(lineDataSet)
     lineDataSet.apply {
         setDrawFilled(true)
+        setDrawValues(false)
         try{
             val mColor = Color.parseColor(coinColor)
             color = mColor

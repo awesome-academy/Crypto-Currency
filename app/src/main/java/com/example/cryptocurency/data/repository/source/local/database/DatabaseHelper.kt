@@ -34,7 +34,7 @@ class DatabaseHelper(context: Context?) :
             CoinEntry.NAME,
             CoinEntry.SYMBOL,
             CoinEntry.PRICE,
-            CoinEntry.CHANCE,
+            CoinEntry.CHANGE,
             CoinEntry.MARKET_CAP,
             CoinEntry.ICON_URL,
             CoinEntry.N_24H_VOLUME_LOCAL,

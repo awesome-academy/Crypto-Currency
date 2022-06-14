@@ -14,7 +14,7 @@ data class Coin(
     var marketCap: String = "0",
     var price: String = "0",
     var btcPrice: String = "0",
-    var chance: String = "0",
+    var change: String = "0",
     var rank: Int= 0,
     var n24hVolume: String = "0",
     var coinDetail : CoinDetail = CoinDetail()
@@ -44,7 +44,7 @@ object CoinEntry{
     const val PRICE = "price"
     const val PRICE_AT = "priceAt"
     const val BTC_PRICE = "btcPrice"
-    const val CHANCE = "change"
+    const val CHANGE = "change"
     const val N_24H_VOLUME = "24hVolume"
     const val N_24H_VOLUME_LOCAL = "n24hVolume"
     const val SPARKLINE = "sparkline"
