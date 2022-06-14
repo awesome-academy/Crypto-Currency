@@ -6,7 +6,7 @@ import androidx.appcompat.app.AlertDialog
 import com.example.cryptocurency.R
 import com.example.cryptocurency.data.models.Coin
 import com.example.cryptocurency.databinding.FragmentFavoriteBinding
-import com.example.cryptocurency.ui.ExchangeActivity
+import com.example.cryptocurency.ui.exchange.ExchangeActivity
 import com.example.cryptocurency.ui.adapter.ItemClickListener
 import com.example.cryptocurency.ui.adapter.MainCoinAdapter
 import com.example.cryptocurency.ui.detail.DetailActivity

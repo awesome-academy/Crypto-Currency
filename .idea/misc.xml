@@ -8,11 +8,14 @@
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/background_decrese.xml" value="0.1665" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/background_increase.xml" value="0.1665" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/background_liner_gradient.xml" value="0.1" />
+        <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/background_transparent_click.xml" value="0.145" />
+        <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/border_all.xml" value="0.145" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/border_bottom.xml" value="0.1" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/border_top.xml" value="0.1" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/change_increase_background.xml" value="0.1665" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/gradient.xml" value="0.1" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/ic_chart.xml" value="0.1" />
+        <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/ic_drop_down.xml" value="0.145" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/ic_exchange.xml" value="0.1" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/ic_favorite.xml" value="0.1" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/ic_favorite_border.xml" value="0.149" />
@@ -22,7 +25,7 @@
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/drawable/spinner_backgound.xml" value="0.1" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/layout/activity_detail.xml" value="0.2" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/layout/activity_detalil.xml" value="0.1125" />
-        <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/layout/activity_exchange.xml" value="0.1265625" />
+        <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/layout/activity_exchange.xml" value="0.264" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/layout/activity_splash.xml" value="0.22826086956521738" />
         <entry key="..\:/My file/Base Folder/Sun_Project/CyptoCurrency/Crypto-Currency/app/src/main/res/layout/appbar_main.xml" value="0.18958333333333333" />

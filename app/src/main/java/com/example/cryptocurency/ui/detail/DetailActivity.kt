@@ -73,7 +73,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
     private fun setViewData(coin: Coin?) {
         coin?.apply {
             binding?.apply {
-                toolBarTitle.text = name
+                toolbarTitle.text = name
                 txtCoinSymbol.text = symbol
                 txtCoinRank.text = rank.toString().getCoinRank()
                 imgCoin.loadImageSVG(iconUrl, R.drawable.img_default_coin)

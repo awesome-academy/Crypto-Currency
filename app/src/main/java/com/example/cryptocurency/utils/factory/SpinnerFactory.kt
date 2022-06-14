@@ -16,6 +16,12 @@ object SpinnerFactory {
         androidx.appcompat.R.layout.support_simple_spinner_dropdown_item
     )
 
+    fun createSpinnerAdapterFromArray(context: Context, arrayAdapter: ArrayList<String>) = ArrayAdapter(
+        context,
+        androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
+        arrayAdapter
+    )
+
     fun createSpinnerListener(
         handleSelect: (Int) -> Unit,
         handleNoSelect: () -> Unit

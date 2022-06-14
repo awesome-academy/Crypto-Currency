@@ -46,16 +46,16 @@ object JsonHelper {
                     numberOfExchanges = it.optLong(CoinEntry.NUMBER_OF_EXCHANGES)
                     websiteUrl = it.optString(CoinEntry.WEBSITE_URL)
                     description = it.optString(CoinEntry.DESCRIPTION)
-                    val jsonSpark = it.optJSONArray(CoinEntry.SPARKLINE)
-                    val list = ArrayList<String>()
-                    jsonSpark?.let { arr ->
-                        for (i in 0 until arr.length()) {
-                            list.add(arr.optString(i))
-                        }
-                    }
-                    sparkline = list
                 }
             }
+            val jsonSpark = it.optJSONArray(CoinEntry.SPARKLINE)
+            val list = ArrayList<String>()
+            jsonSpark?.let { arr ->
+                for (i in 0 until arr.length()) {
+                    list.add(arr.optString(i))
+                }
+            }
+            coinDetail.sparkline = list
         }
     }
 }

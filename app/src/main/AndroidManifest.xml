@@ -18,14 +18,18 @@
         <activity
             android:name=".ui.detail.DetailActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:parentActivityName=".ui.MainActivity"/>
         <activity
-            android:name=".ui.ExchangeActivity"
+            android:name=".ui.exchange.ExchangeActivity"
             android:exported="false"
-            android:parentActivityName=".ui.MainActivity"/>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/GradientTheme"/>
         <activity
             android:name=".ui.SplashActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/GradientTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

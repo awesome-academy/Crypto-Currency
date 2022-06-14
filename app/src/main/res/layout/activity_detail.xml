@@ -23,7 +23,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/tool_bar_title"
+                android:id="@+id/toolbarTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -36,7 +36,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/btn_back"
+                android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:backgroundTint="@color/color_white"
@@ -46,7 +46,7 @@
                 app:srcCompat="@drawable/ic_back" />
 
             <ImageButton
-                android:id="@+id/btn_favorite"
+                android:id="@+id/btnFavorite"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/color_white"
@@ -70,15 +70,13 @@
         app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dimen_8dp"
-            android:layout_marginTop="@dimen/dimen_10dp"
-            tools:layout_editor_absoluteX="8dp">
+            android:layout_marginTop="@dimen/dimen_10dp">
 
             <TextView
-                android:id="@+id/txt_coin_rank"
+                android:id="@+id/txtCoinRank"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_20dp"
@@ -86,12 +84,12 @@
                 android:text="@string/rank1"
                 android:textColor="@color/color_black_3"
                 android:textSize="@dimen/dimen_16sp"
-                app:layout_constraintEnd_toStartOf="@+id/txt_coin_price"
-                app:layout_constraintStart_toEndOf="@id/img_coin"
-                app:layout_constraintTop_toBottomOf="@id/txt_coin_symbol" />
+                app:layout_constraintEnd_toStartOf="@+id/txtCoinPrice"
+                app:layout_constraintStart_toEndOf="@id/imgCoin"
+                app:layout_constraintTop_toBottomOf="@id/txtCoinSymbol" />
 
             <TextView
-                android:id="@+id/txt_coin_symbol"
+                android:id="@+id/txtCoinSymbol"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_20dp"
@@ -99,12 +97,12 @@
                 android:text="@string/btc"
                 android:textColor="@color/color_black_3"
                 android:textSize="@dimen/dimen_20sp"
-                app:layout_constraintEnd_toStartOf="@+id/txt_coin_price"
-                app:layout_constraintStart_toEndOf="@id/img_coin"
+                app:layout_constraintEnd_toStartOf="@id/txtCoinPrice"
+                app:layout_constraintStart_toEndOf="@id/imgCoin"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/img_coin"
+                android:id="@+id/imgCoin"
                 android:layout_width="@dimen/dimen_100dp"
                 android:layout_height="@dimen/dimen_100dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -112,7 +110,7 @@
                 app:srcCompat="@drawable/img_default_coin" />
 
             <TextView
-                android:id="@+id/txt_coin_price"
+                android:id="@+id/txtCoinPrice"
                 android:layout_width="@dimen/dimen_80dp"
                 android:layout_height="@dimen/dimen_20dp"
                 android:layout_marginStart="@dimen/dimen_20dp"
@@ -127,12 +125,12 @@
                 android:textAlignment="center"
                 android:textColor="@color/color_black_3"
                 android:textSize="@dimen/dimen_14sp"
-                app:layout_constraintEnd_toStartOf="@id/txt_coin_change"
-                app:layout_constraintStart_toEndOf="@+id/txt_coin_rank"
+                app:layout_constraintEnd_toStartOf="@id/txtCoinChange"
+                app:layout_constraintStart_toEndOf="@id/txtCoinRank"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txt_coin_change"
+                android:id="@+id/txtCoinChange"
                 android:layout_width="@dimen/dimen_60dp"
                 android:layout_height="@dimen/dimen_20dp"
                 android:layout_marginTop="@dimen/dimen_40dp"
@@ -145,16 +143,16 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/view_chart"
+                android:id="@+id/viewChart"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dimen_200dp"
                 android:layout_marginVertical="@dimen/dimen_20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_coin" />
+                app:layout_constraintTop_toBottomOf="@id/imgCoin" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/view_description"
+                android:id="@+id/viewDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_8dp"
@@ -162,10 +160,10 @@
                 app:cardElevation="@dimen/dimen_8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view_chart">
+                app:layout_constraintTop_toBottomOf="@id/viewChart">
 
                 <TextView
-                    android:id="@+id/txt_coin_description"
+                    android:id="@+id/txtCoinDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/dimen_30dp"
@@ -179,7 +177,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view_description">
+                app:layout_constraintTop_toBottomOf="@id/viewDescription">
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -207,7 +205,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/txt_coin_market_cap"
+                                android:id="@+id/txtCoinMarketCap"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/loading" />
@@ -236,7 +234,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/txt_coin_24h_volume"
+                                android:id="@+id/txtCoin24hVolume"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/loading" />
@@ -270,7 +268,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/txt_coin_num_market"
+                                android:id="@+id/txtCoinNumMarket"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/loading" />
@@ -299,7 +297,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/txt_coin_num_exchange"
+                                android:id="@+id/txtCoinNumExchange"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/loading" />
@@ -333,7 +331,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/txt_coin_btc_price"
+                                android:id="@+id/txtCoinBtcPrice"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/loading" />
@@ -362,7 +360,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/txt_coin_website_url"
+                                android:id="@+id/txtCoinWebsiteUrl"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/loading" />

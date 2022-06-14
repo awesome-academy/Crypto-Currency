@@ -1,23 +1,18 @@
 package com.example.cryptocurency.ui.home_fragment
 
-import android.content.Context
 import android.content.Intent
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.TextView
 import com.example.cryptocurency.R
 import com.example.cryptocurency.data.models.Coin
 import com.example.cryptocurency.databinding.FragmentHomeBinding
 import com.example.cryptocurency.ui.detail.DetailActivity
-import com.example.cryptocurency.ui.ExchangeActivity
+import com.example.cryptocurency.ui.exchange.ExchangeActivity
 import com.example.cryptocurency.ui.adapter.ItemClickListener
 import com.example.cryptocurency.ui.adapter.MainCoinAdapter
 import com.example.cryptocurency.utils.COIN_EXTRA
 import com.example.cryptocurency.utils.EXCEPTION_NO_DATA
 import com.example.cryptocurency.utils.factory.PresenterFactory
 import com.example.cryptocurency.utils.base.BaseFragment
-import com.example.cryptocurency.utils.extension.setTextColorFromResource
 import com.example.cryptocurency.utils.extension.showToast
 import com.example.cryptocurency.utils.factory.SpinnerFactory
 import java.lang.Exception
