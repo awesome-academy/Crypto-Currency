@@ -9,8 +9,6 @@ class HomeFragmentPresenter(
     private val coinRepository: CoinRepository
 ) : HomeFragmentContract.Presenter {
 
-    private val mCoinList = mutableListOf<Coin>()
-
     override fun getCoin(limit: Int, orderBy: String) {
         mView.apply {
             displayLoading()
