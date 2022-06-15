@@ -26,9 +26,12 @@ class AssetDAOImpl(DBHelper: DatabaseHelper) : IAssetDAO {
                 Asset().apply {
                     id = cursor.getInt(0)
                     coinId = cursor.getString(1)
-                    count = cursor.getString(2)
-                    purchasePrice = cursor.getString(3)
-                    purchaseTime = cursor.getLong(4)
+                    coinName = cursor.getString(2)
+                    coinSymbol = cursor.getString(3)
+                    iconUrl = cursor.getString(4)
+                    count = cursor.getString(5)
+                    purchasePrice = cursor.getString(6)
+                    purchaseTime = cursor.getLong(7)
                     result.add(this)
                 }
             } while (cursor.moveToNext())
@@ -61,6 +64,9 @@ class AssetDAOImpl(DBHelper: DatabaseHelper) : IAssetDAO {
 
     private fun createContentValue(asset: Asset) = ContentValues().apply {
         put(AssetEntry.COIN_ID, asset.coinId)
+        put(AssetEntry.COIN_NAME, asset.coinName)
+        put(AssetEntry.COIN_SYMBOL, asset.coinSymbol)
+        put(AssetEntry.ICON_URL, asset.iconUrl)
         put(AssetEntry.COUNT, asset.count)
         put(AssetEntry.PURCHASE_PRICE, asset.purchasePrice)
         put(AssetEntry.PURCHASE_TIME, asset.purchaseTime)

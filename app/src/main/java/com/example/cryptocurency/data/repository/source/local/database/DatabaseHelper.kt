@@ -44,10 +44,14 @@ class DatabaseHelper(context: Context?) :
         )
 
         private val CREATE_TABLE_ASSET = String.format(
-            "CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, %s TEXT, %s TEXT, %s TEXT,%s INTEGER)",
+            "CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, %s TEXT, %s TEXT, %s TEXT," +
+                    " %s TEXT, %s TEXT, %s TEXT,%s INTEGER)",
             TABLE_ASSET,
             AssetEntry.ID,
             AssetEntry.COIN_ID,
+            AssetEntry.COIN_NAME,
+            AssetEntry.COIN_SYMBOL,
+            AssetEntry.ICON_URL,
             AssetEntry.COUNT,
             AssetEntry.PURCHASE_PRICE,
             AssetEntry.PURCHASE_TIME

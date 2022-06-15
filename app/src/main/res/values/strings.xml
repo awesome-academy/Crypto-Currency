@@ -28,6 +28,9 @@
     <string name="value">Value</string>
     <string name="result">Result</string>
     <string name="search_hint">Search...</string>
+    <string name="asset">Asset</string>
+    <string name="add">Add</string>
+    <string name="add_asset">Add Asset</string>
     <string-array name="coin_catalogs">
         <item>marketCap</item>
         <item>price</item>

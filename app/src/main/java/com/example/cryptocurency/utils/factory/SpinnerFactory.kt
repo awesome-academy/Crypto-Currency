@@ -24,7 +24,8 @@ object SpinnerFactory {
 
     fun createSpinnerListener(
         handleSelect: (Int) -> Unit,
-        handleNoSelect: () -> Unit
+        handleNoSelect: () -> Unit,
+        isWhite: Boolean = true
     ) = object :
         AdapterView.OnItemSelectedListener {
         override fun onItemSelected(
@@ -33,7 +34,7 @@ object SpinnerFactory {
             position: Int,
             id: Long
         ) {
-            (view as TextView).setTextColorFromResource(R.color.color_white)
+            if (isWhite) (view as TextView).setTextColorFromResource(R.color.color_white)
             handleSelect(position)
         }
 
