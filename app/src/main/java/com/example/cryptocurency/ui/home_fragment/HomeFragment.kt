@@ -9,6 +9,7 @@ import com.example.cryptocurency.ui.detail.DetailActivity
 import com.example.cryptocurency.ui.exchange.ExchangeActivity
 import com.example.cryptocurency.ui.adapter.ItemClickListener
 import com.example.cryptocurency.ui.adapter.MainCoinAdapter
+import com.example.cryptocurency.ui.search.SearchActivity
 import com.example.cryptocurency.utils.COIN_EXTRA
 import com.example.cryptocurency.utils.EXCEPTION_NO_DATA
 import com.example.cryptocurency.utils.factory.PresenterFactory
@@ -131,7 +132,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     private fun handleToolBarItemClick(id: Int) {
         when (id) {
-            R.id.nav_search -> {}
+            R.id.nav_search -> {
+                Intent(context, SearchActivity::class.java).apply {
+                    startActivity(this)
+                }
+            }
             R.id.nav_exchange -> {
                 Intent(context, ExchangeActivity::class.java).apply {
                     startActivity(this)

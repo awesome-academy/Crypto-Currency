@@ -14,6 +14,8 @@ import com.example.cryptocurency.ui.favorite_fragment.FavoriteFragmentContract
 import com.example.cryptocurency.ui.favorite_fragment.FavoriteFragmentPresenter
 import com.example.cryptocurency.ui.home_fragment.HomeFragmentContract
 import com.example.cryptocurency.ui.home_fragment.HomeFragmentPresenter
+import com.example.cryptocurency.ui.search.SearchActivityContract
+import com.example.cryptocurency.ui.search.SearchActivityPresenter
 
 class PresenterFactory(context: Context?) {
     private val coinRepository = CoinRepository.getInstance(
@@ -30,6 +32,10 @@ class PresenterFactory(context: Context?) {
         coinRepository
     )
 
+    fun createFavoriteFragmentPresenter(view: FavoriteFragmentContract.View) = FavoriteFragmentPresenter(
+        view,
+        coinRepository
+    )
     fun createDetailActivityPresenter(view: DetailActivityContract.View) = DetailActivityPresenter(
         view,
         coinRepository
@@ -40,7 +46,7 @@ class PresenterFactory(context: Context?) {
         coinRepository
     )
 
-    fun createFavoriteFragmentPresenter(view: FavoriteFragmentContract.View) = FavoriteFragmentPresenter(
+    fun createSearchActivityPresenter(view: SearchActivityContract.View) = SearchActivityPresenter(
         view,
         coinRepository
     )

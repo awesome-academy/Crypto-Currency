@@ -13,8 +13,8 @@ import com.example.cryptocurency.utils.extension.*
 class MainCoinAdapter(private val mListener: ItemClickListener<Coin>) :
     RecyclerView.Adapter<MainCoinAdapter.ViewHolder>() {
 
-    private var mList = mutableListOf<Coin>()
     private var mContext: Context? = null
+    private var mList = mutableListOf<Coin>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         mContext = parent.context
