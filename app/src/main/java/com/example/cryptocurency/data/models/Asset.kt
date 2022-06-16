@@ -11,8 +11,9 @@ data class Asset(
     var coinSymbol: String ="",
     var iconUrl: String ="",
     var count: String = "0",
-    var purchasePrice: String = "",
-    var purchaseTime: Long = 0
+    var purchasePrice: String = "0",
+    var purchaseTime: Long = 0,
+    var currentPrice: String? = null
 ): Parcelable
 
 object AssetEntry{

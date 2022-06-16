@@ -14,6 +14,7 @@ import com.example.cryptocurency.ui.search.SearchActivity
 import com.example.cryptocurency.utils.COIN_EXTRA
 import com.example.cryptocurency.utils.EXCEPTION_NO_DATA
 import com.example.cryptocurency.utils.base.BaseFragment
+import com.example.cryptocurency.utils.extension.showConfirmDialog
 import com.example.cryptocurency.utils.extension.showToast
 import com.example.cryptocurency.utils.factory.PresenterFactory
 import com.example.cryptocurency.utils.factory.SpinnerFactory
@@ -106,7 +107,7 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding>(FragmentFavoriteB
     override fun onItemClick(item: Coin?) {
         item?.let {
             Intent(context, DetailActivity::class.java).apply {
-                putExtra(COIN_EXTRA, item)
+                putExtra(COIN_EXTRA, it)
                 startActivity(this)
             }
         }
@@ -116,22 +117,8 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding>(FragmentFavoriteB
         item?.let { coin ->
             val confirmTitle = "Remove Favorite"
             val confirmMessage = "Are you sure you want to remove ${coin.name} from favorite?"
-            val negativeText ="No"
-            val positiveText = "Yes"
-            context?.apply {
-                AlertDialog.Builder(this).apply {
-                    setTitle(confirmTitle)
-                    setMessage(confirmMessage)
-                    setCancelable(false)
-                    setPositiveButton(positiveText) { _, _ ->
-                        mPresenter?.removeFavoriteCoin(coin)
-                    }
-                    setNegativeButton(negativeText) { dialog, _ ->
-                        dialog.dismiss()
-                    }
-                    create()
-                    show()
-                }
+            context?.showConfirmDialog(confirmTitle, confirmMessage) {
+                mPresenter?.removeFavoriteCoin(coin)
             }
         }
         return true

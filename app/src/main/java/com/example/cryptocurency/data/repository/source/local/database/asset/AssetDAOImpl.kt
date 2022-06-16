@@ -4,6 +4,7 @@ import android.content.ContentValues
 import com.example.cryptocurency.data.models.Asset
 import com.example.cryptocurency.data.models.AssetEntry
 import com.example.cryptocurency.data.repository.source.local.database.DatabaseHelper
+import com.example.cryptocurency.data.repository.source.local.database.DatabaseHelper.Companion.TABLE_ASSET
 
 class AssetDAOImpl(DBHelper: DatabaseHelper) : IAssetDAO {
 
@@ -36,18 +37,19 @@ class AssetDAOImpl(DBHelper: DatabaseHelper) : IAssetDAO {
                 }
             } while (cursor.moveToNext())
         }
+        cursor.close()
         return result
     }
 
     override fun insertAsset(asset: Asset) {
-        writeDB.insert(DatabaseHelper.TABLE_ASSET, null, createContentValue(asset))
+        writeDB.insert(TABLE_ASSET, null, createContentValue(asset))
     }
 
     override fun updateAsset(asset: Asset) {
         val selection = "${AssetEntry.ID} = ?"
         val selectionArgs = arrayOf(asset.id.toString())
         writeDB.update(
-            DatabaseHelper.TABLE_ASSET,
+            TABLE_ASSET,
             createContentValue(asset),
             selection,
             selectionArgs
@@ -56,7 +58,7 @@ class AssetDAOImpl(DBHelper: DatabaseHelper) : IAssetDAO {
 
     override fun deleteAsset(assetId: Int) {
         writeDB.delete(
-            DatabaseHelper.TABLE_ASSET,
+            TABLE_ASSET,
             "${AssetEntry.ID} = ?",
             arrayOf(assetId.toString())
         )

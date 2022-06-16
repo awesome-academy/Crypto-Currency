@@ -1,6 +1,5 @@
 package com.example.cryptocurency.ui.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,12 +12,10 @@ import com.example.cryptocurency.utils.extension.*
 class MainCoinAdapter(private val mListener: ItemClickListener<Coin>) :
     RecyclerView.Adapter<MainCoinAdapter.ViewHolder>() {
 
-    private var mContext: Context? = null
     private var mList = mutableListOf<Coin>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        mContext = parent.context
-        val binding = ItemCoinMainLayoutBinding.inflate(LayoutInflater.from(mContext))
+        val binding = ItemCoinMainLayoutBinding.inflate(LayoutInflater.from(parent.context))
         return ViewHolder(binding, mListener)
     }
 
@@ -31,10 +28,7 @@ class MainCoinAdapter(private val mListener: ItemClickListener<Coin>) :
                     txtName.text = name
                     txtSymbol.text = symbol
                     txtChange.text = change.getCoinChange()
-                    txtPrice.apply {
-                        text = price.getCoinPrice()
-                        isSelected = true
-                    }
+                    txtPrice.setTextWithSelected(price.getCoinPrice())
                     icCoin.loadImageSVG(iconUrl, R.drawable.img_default_coin)
                     change.toDoubleOrNull()?.let {
                         if (it < 0) {

@@ -39,6 +39,7 @@ class FavoriteCoinsDAOImpl(DBHelper: DatabaseHelper) : IFavoriteCoinsDAO {
                 }
             } while (cursor.moveToNext())
         }
+        cursor.close()
         return result
     }
 

@@ -1,6 +1,5 @@
 package com.example.cryptocurency.ui.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,12 +11,10 @@ import com.example.cryptocurency.utils.extension.loadImageSVG
 class SearchCoinAdapter(private val mListener: ItemClickListener<Coin>):
     RecyclerView.Adapter<SearchCoinAdapter.ViewHolder>()  {
 
-    private var mContext: Context? = null
     private var mList = mutableListOf<Coin>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchCoinAdapter.ViewHolder {
-        mContext = parent.context
-        val binding = ItemCoinSearchLayoutBinding.inflate(LayoutInflater.from(mContext))
+        val binding = ItemCoinSearchLayoutBinding.inflate(LayoutInflater.from(parent.context))
         return ViewHolder(binding, mListener)
     }
 
