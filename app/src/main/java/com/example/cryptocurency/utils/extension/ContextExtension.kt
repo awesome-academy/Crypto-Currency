@@ -1,6 +1,7 @@
 package com.example.cryptocurency.utils.extension
 
 import android.content.Context
+import android.content.DialogInterface
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
@@ -22,6 +23,17 @@ fun Context.showConfirmDialog(title: CharSequence?, message: CharSequence?, posi
             dialog.dismiss()
         }
         create()
+        show()
+    }
+}
+
+fun Context.showNotificationDialog(title: String, message: String, btnName: String){
+    AlertDialog.Builder(this).apply {
+        setTitle(title)
+        setMessage(message)
+        setPositiveButton(btnName) { dialog, _ ->
+            dialog.dismiss()
+        }
         show()
     }
 }
