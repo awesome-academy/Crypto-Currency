@@ -12,6 +12,8 @@ import com.example.cryptocurency.data.repository.source.remote.AssetRemoteDataSo
 import com.example.cryptocurency.data.repository.source.remote.CoinsRemoteDataSource
 import com.example.cryptocurency.ui.add_asset.AddAssetActivityContract
 import com.example.cryptocurency.ui.add_asset.AddAssetActivityPresenter
+import com.example.cryptocurency.ui.asset_fragment.AssetFragmentContract
+import com.example.cryptocurency.ui.asset_fragment.AssetFragmentPresenter
 import com.example.cryptocurency.ui.detail.DetailActivityContract
 import com.example.cryptocurency.ui.detail.DetailActivityPresenter
 import com.example.cryptocurency.ui.exchange.ExchangeActivityContract
@@ -52,6 +54,12 @@ class PresenterFactory(context: Context?) {
         view,
         coinRepository
     )
+
+    fun createAssetFragmentPresenter(view: AssetFragmentContract.View) = AssetFragmentPresenter(
+        view,
+        assetRepository
+    )
+
     fun createDetailActivityPresenter(view: DetailActivityContract.View) = DetailActivityPresenter(
         view,
         coinRepository

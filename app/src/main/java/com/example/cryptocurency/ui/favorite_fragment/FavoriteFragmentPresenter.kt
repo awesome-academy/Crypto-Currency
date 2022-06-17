@@ -23,7 +23,7 @@ class FavoriteFragmentPresenter(
 
     override fun updateFavoriteListData(list: MutableList<Coin>) {
         val coinsId = mutableListOf<String>()
-        list.map {
+        list.forEach {
             coinsId.add(it.id)
         }
         coinRepository.updateListCoins(coinsId, object : OnResultListener<MutableList<Coin>> {
