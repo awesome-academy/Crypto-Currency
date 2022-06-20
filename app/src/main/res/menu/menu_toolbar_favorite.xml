@@ -9,8 +9,4 @@
         android:title="@string/exchange"
         android:icon="@drawable/ic_exchange"
         app:showAsAction="ifRoom"/>
-    <item android:id="@+id/nav_reload"
-        android:title="@string/reload"
-        android:icon="@drawable/ic_reload"
-        app:showAsAction="ifRoom"/>
 </menu>

@@ -30,7 +30,7 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding>(FragmentFavoriteB
     override fun initView() {
         binding?.apply {
             toolbar.apply {
-                inflateMenu(R.menu.menu_toolbar_home)
+                inflateMenu(R.menu.menu_toolbar_favorite)
                 setOnMenuItemClickListener {
                     handleToolBarItemClick(it.itemId)
                     true

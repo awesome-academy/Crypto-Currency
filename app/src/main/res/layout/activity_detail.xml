@@ -82,6 +82,7 @@
                 android:layout_marginHorizontal="@dimen/dimen_20dp"
                 android:layout_marginTop="@dimen/dimen_10dp"
                 android:text="@string/rank1"
+                android:singleLine="true"
                 android:textColor="@color/color_black_3"
                 android:textSize="@dimen/dimen_16sp"
                 app:layout_constraintEnd_toStartOf="@+id/txtCoinPrice"
@@ -95,6 +96,7 @@
                 android:layout_marginHorizontal="@dimen/dimen_20dp"
                 android:layout_marginTop="@dimen/dimen_20dp"
                 android:text="@string/btc"
+                android:singleLine="true"
                 android:textColor="@color/color_black_3"
                 android:textSize="@dimen/dimen_20sp"
                 app:layout_constraintEnd_toStartOf="@id/txtCoinPrice"
@@ -103,15 +105,15 @@
 
             <ImageView
                 android:id="@+id/imgCoin"
-                android:layout_width="@dimen/dimen_100dp"
-                android:layout_height="@dimen/dimen_100dp"
+                android:layout_width="@dimen/dimen_80dp"
+                android:layout_height="@dimen/dimen_80dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/img_default_coin" />
 
             <TextView
                 android:id="@+id/txtCoinPrice"
-                android:layout_width="@dimen/dimen_80dp"
+                android:layout_width="@dimen/dimen_70dp"
                 android:layout_height="@dimen/dimen_20dp"
                 android:layout_marginStart="@dimen/dimen_20dp"
                 android:layout_marginTop="@dimen/dimen_40dp"

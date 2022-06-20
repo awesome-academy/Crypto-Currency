@@ -142,6 +142,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                     startActivity(this)
                 }
             }
+            R.id.nav_reload ->{
+                handleGetCoin()
+            }
         }
     }
 
