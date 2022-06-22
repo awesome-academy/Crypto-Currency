@@ -35,6 +35,7 @@
     <string name="current_balance">Current Balance:</string>
     <string name="win_loss">Win/Loss:</string>
     <string name="my_wallet">My Wallet:</string>
+    <string name="reload">Reload</string>
     <string-array name="coin_catalogs">
         <item>marketCap</item>
         <item>price</item>

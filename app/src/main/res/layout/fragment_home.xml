@@ -94,7 +94,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="@dimen/dimen_100dp"
+            android:layout_width="@dimen/dimen_80dp"
             android:layout_height="wrap_content"
             android:text="@string/price"
             android:textColor="@color/color_white"
@@ -102,7 +102,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="@dimen/dimen_80dp"
+            android:layout_width="@dimen/dimen_70dp"
             android:layout_height="wrap_content"
             android:text="@string/change"
             android:textColor="@color/color_white"

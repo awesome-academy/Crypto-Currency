@@ -120,7 +120,9 @@ class AssetFragment : BaseFragment<FragmentAssetBinding>(FragmentAssetBinding::i
             }
         }
         val change = (totalCurrent - totalPurchase).roundInt()
-        val changePercent = ((change / totalPurchase)* PERCENT_NUM).roundInt()
+        val changePercent = if (totalPurchase > 0)
+            ((change / totalPurchase) * PERCENT_NUM).roundInt()
+        else 0.0
         binding?.apply {
             txtCurrentBalance.text = totalCurrent.toString().getCoinPrice()
             txtWinLossNum.text = change.toString().getCoinPrice()
